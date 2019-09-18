@@ -74,7 +74,7 @@ class CodeController extends Controller
 
             // 开始事务
 
-            DB::beginTransaction();
+//            DB::beginTransaction();
             try {
 
                 $code = Code::where('status', 0)->first();
@@ -91,9 +91,9 @@ class CodeController extends Controller
                 $data ['number'] = $staff->number;
                 $data ['code'] = $code->code;
 
-                DB::commit();
+//                DB::commit();
             } catch (\Exception $e) {
-                DB::rollBack();
+//                DB::rollBack();
                 return response()->json([
                     'data' => $data,
                     'msg' => $e->getMessage(),
