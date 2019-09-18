@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/code','CodeController@show');
+
+Route::get('/list','CodeController@showCodes');
+
+Route::post('/code','CodeController@store');
+
